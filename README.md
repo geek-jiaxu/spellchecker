@@ -1,4 +1,4 @@
-###基于Ngram的拼写纠错功能
+![mahua](mahua-logo.jpg)
 ##MaHua是什么?
 一个在线编辑markdown文档的编辑器
 

@@ -9,9 +9,9 @@
 
 ### 1. INDEX_STORE_DIR倒排索引存储路径
 ``
-    Analyzer analyzer = new StandardAnalyzer();
-    IndexWriterConfig config = new IndexWriterConfig(analyzer);
-    Directory directory = FSDirectory.open(Paths.get(INDEX_STORE_DIR));
+Analyzer analyzer = new StandardAnalyzer();
+IndexWriterConfig config = new IndexWriterConfig(analyzer);
+Directory directory = FSDirectory.open(Paths.get(INDEX_STORE_DIR));
 ``
 ### 2. 采用NGram方式分词纠错， ngram相关基础知识可以参见http://m.blog.csdn.net/baimafujinji/article/details/51281816，还可以采用LevensteinDistance，JaroWinklerDistance等
     

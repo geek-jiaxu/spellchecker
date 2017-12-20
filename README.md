@@ -1,5 +1,5 @@
 
-#拼写纠错功能
+# 拼写纠错功能
 
 本文基于lucene6.1中的spellchcker编写的使用示例，并介绍功能实现流程,实现类似以下百度中的纠错
 
@@ -7,13 +7,13 @@
 
 首先我们要有一份词典数据，作为正确的词，供lucene建立索引，词典可参考file/dictionary.txt文件格式
 
-1. INDEX_STORE_DIR倒排索引存储路径
-
+### 1. INDEX_STORE_DIR倒排索引存储路径
+``
     Analyzer analyzer = new StandardAnalyzer();
     IndexWriterConfig config = new IndexWriterConfig(analyzer);
     Directory directory = FSDirectory.open(Paths.get(INDEX_STORE_DIR));
-    
-2. 采用NGram方式分词纠错， ngram相关基础知识可以参见http://m.blog.csdn.net/baimafujinji/article/details/51281816，还可以采用LevensteinDistance，JaroWinklerDistance等
+``
+### 2. 采用NGram方式分词纠错， ngram相关基础知识可以参见http://m.blog.csdn.net/baimafujinji/article/details/51281816，还可以采用LevensteinDistance，JaroWinklerDistance等
     
     final SpellChecker sp = new SpellChecker(directory, new NGramDistance());
     BufferedReader reader = Files.newBufferedReader(Paths.get(DIC_STORE_DIR), Charset.forName("gbk"));
